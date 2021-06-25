@@ -50,7 +50,14 @@ namespace vidly
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action}/{id?}");
+                    pattern: "{controller=Home}/{action=index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "Movies",
+                    pattern: @"{controller=Movies}/{action}/{year}/{month}",null,
+                    new {year=@"\d{4}" ,month=@"\d{2}"}
+                    
+                    );
             });
         }
     }

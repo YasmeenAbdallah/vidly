@@ -30,5 +30,11 @@ namespace vidly.Controllers
             }
             return Content(string.Format("hello the id is{0} and sort by{1}", id, name));
         }
+
+        public IActionResult multiargu(int year,int month)
+        {
+            return Content($"this is the year {year} and that the moth {month}");
+        }
+        
     }
 }
