@@ -49,15 +49,15 @@ namespace vidly
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=index}/{id?}");
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}"); 
+                        /*
+                                endpoints.MapControllerRoute(
+                                    name: "Movies",
+                                    pattern: @"{controller=Movies}/{action}/{year}/{month}",null,
+                                    new {year=@"\d{4}" ,month=@"\d{2}"}
 
-                endpoints.MapControllerRoute(
-                    name: "Movies",
-                    pattern: @"{controller=Movies}/{action}/{year}/{month}",null,
-                    new {year=@"\d{4}" ,month=@"\d{2}"}
-                    
-                    );
+                                    );*/
             });
         }
     }
