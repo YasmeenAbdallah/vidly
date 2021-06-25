@@ -1,4 +1,4 @@
-﻿@model vidly.Models.movie
+﻿@model vidly.ModelsView.MoviesCustomerView;
 <!DOCTYPE html>
 
 <html>
@@ -8,7 +8,21 @@
 </head>
 <body>
     <div>
-        @Model.Name
+        @Model.Movies.Name;
+        @{ 
+            var result = Model.CustomerList.Count > 1 ? "popular" : "not popular"; 
+            }
+        <h2 class="@result">@Model.Movies.Name</h2> 
+        @if (Model.CustomerList.Count == 0) { 
+            <textarea>there's no customers see this movie</textarea>
+        }
+            else
+            {
+                @foreach (var item in Model.CustomerList)
+                {
+                    @item.Name
+                }
+            }
      
     </div>
 </body>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using vidly.Models;
+using vidly.ModelsView;
 
 namespace vidly.Controllers
 {
@@ -11,8 +12,18 @@ namespace vidly.Controllers
     {
         public IActionResult Index()
         {
-            var movie = new movie() { Name="shrek!"};
-            return Content("hello ");
+            var movie = new movie() { Name = "shrek!" };
+            var cx= new List<Customers>()
+                {
+                    new Customers { Name = " yasmeen" },
+                    new Customers { Name = "abdallah" }
+                };
+            var movieCustomer = new MoviesCustomerView
+            {
+                Movies = movie,
+                CustomerList =cx };
+       
+            return View(movieCustomer);
         }
         public IActionResult Edit(int id)
         {
@@ -30,7 +41,7 @@ namespace vidly.Controllers
             }
             return Content(string.Format("hello the id is{0} and sort by{1}", id, name));
         }
-        [Route("Movies/multiargu/{year}/{month:regex(\\d{2}):range(1,12)}")]
+       // [Route("Movies/multiargu/{year}/{month:regex(\\d{2}):range(1,12)}")]
         public IActionResult multiargu(int year,int month)
         {
             return Content($"this is the year {year} and that the moth {month}");
