@@ -1,13 +1,23 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace vidly.Models
 {
-    public class Customers
+    public class Customers 
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public bool IsSubcribedToNewsLetter { get; set; }
+
+        public MemberShipType MemberShipType { get; set; }
+        public int MemberShipTypeId { get; set; }
+
+
+
+
     }
 }
