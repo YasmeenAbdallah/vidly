@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using vidly.Models;
 
 namespace vidly.Migrations
 {
     [DbContext(typeof(ModelDbContex))]
-    partial class ModelDbContexModelSnapshot : ModelSnapshot
+    [Migration("20210626114036_addAnnotationToCustomer")]
+    partial class addAnnotationToCustomer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
